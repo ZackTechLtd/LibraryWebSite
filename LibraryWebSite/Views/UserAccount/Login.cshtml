@@ -1,0 +1,67 @@
+﻿@using LibraryWebSite.Models
+@model LoginViewModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <section id="loginForm">
+           
+            @using (Html.BeginForm("Login", "UserAccount", new { area = "", id = "logoutForm", ReturnUrl = ViewBag.ReturnUrl, @class = "form-horizontal", role = "form" }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+            <div class="container">
+                <div class="login-wrapper col-md-6 col-md-push-3">
+                    <div class="login-container">
+                        
+                        @Html.ValidationSummary(true, null, new { id = "validationSummary", @class = "alert alert-danger" })
+                        @*@Html.ValidationSummary(true, "")*@
+                        <div class="login-form">
+                            <div class="login-form-header">
+                                <span class="login-title">Log In</span>
+                                <hr />
+                            </div>
+                            <div class="login-form-body">
+
+                                <div class="input-group mb-3" data-validate="Enter username">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                    </div>
+                                    @Html.TextBoxFor(m => m.Username, new { placeholder = "Username", @class = "input100 form-control" })
+                                    @Html.ValidationMessageFor(m => m.Username, "")
+                                </div>
+
+                                <div class="input-group mb-3" data-validate="Enter password">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                    </div>
+                                    @Html.PasswordFor(m => m.Password, new { placeholder = "Password", @class = "input100 form-control" })
+                                    @Html.ValidationMessageFor(m => m.Password, "")
+                                </div>
+
+                                <div class="login-form-footer">
+                                    <div class="login-form-button">
+                                        <input type="submit" value="Log In" class="btn btn-primary btn-block" />
+                                    </div>
+                                    @*<div class="foot-lnk">
+                        @Html.ActionLink(@Crm.Common.Resources.Language.ForgotYourPassword, "ForgotPassword")
+                    </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </section>
+    </div>
+</div>
+
+@section HideLoggedInBar {
+    
+}
+
+

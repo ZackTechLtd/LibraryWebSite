@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "typeahead.js-bootstrap-css@1.2.1",
+      "destination": "wwwroot/lib/typeahead.js-bootstrap-css/"
+    },
+    {
+      "library": "typeahead.js@0.11.1",
+      "destination": "wwwroot/lib/typeahead.js/"
+    }
+  ]
+}

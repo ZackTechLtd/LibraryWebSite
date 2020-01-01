@@ -1,0 +1,108 @@
+﻿@model LibraryWebSite.Models.LibraryBookStatusViewModel
+@{
+    ViewBag.Title = "Library Book Status";
+}
+
+@if (string.IsNullOrEmpty(Model.LibraryBookCode) || Convert.ToString(TempData["SuccessMessage"]) == "Record Inserted")
+{
+    <div class="page-header">
+        <h1>Add Library Book</h1>
+        <small>Add Library Book To List</small>
+    </div>
+}
+else
+{
+    <div class="page-header">
+        <h1>Edit Library Book</h1>
+        <small>Edit Existing Library Book</small>
+    </div>
+}
+
+<div id="typeahead-actions"
+     data-bookurl="@Url.Action("GetBookList", "LibraryBookStatus", new { area = "" })"
+     data-userurl="@Url.Action("GetUserList", "LibraryBookStatus", new { area = "" })"
+     >
+</div>
+
+@using (Html.BeginForm("SaveLibraryBookStatus", "LibraryBookStatus", new { area = "", Id = Model.LibraryBookStatusCode }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" class="form-control" asp-for="LibraryBookStatusCode">
+    <input type="hidden" class="form-control" asp-for="LibraryBookCode">
+    <input type="hidden" class="form-control" asp-for="LibraryUserCode">
+
+    <input type="hidden" class="form-control" asp-for="StrDateCheckedOut">
+    <input type="hidden" class="form-control" asp-for="StrDateReturned">
+
+    <fieldset class="form-group">
+        <label asp-for="LibraryBookTitle"></label>
+        <input type="text" class="form-control" asp-for="LibraryBookTitle">
+        <span asp-validation-for="LibraryBookTitle"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="LibraryUserName"></label>
+        <input type="text" class="form-control" asp-for="LibraryUserName">
+        <span asp-validation-for="LibraryUserName"></span>
+    </fieldset>
+
+     <fieldset class="form-group">
+        @Html.LabelFor(m => m.DateCheckedOut, new { @class = "control-label" })
+        <div class='input-group date' id='selectedDateCheckedOut'>
+            <input name="DateCheckedOut" id="DateCheckedOut" type='text' class="form-control" data-toggle="tooltip"
+                    data-placement="bottom" title="Select Date" data-date-format="DD-MM-YYYY HH:mm:ss" />
+            <span class="input-group-addon input-group-append">
+                <span class="input-group-text fa fa-calendar"></span>
+            </span>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+        @Html.LabelFor(m => m.DateReturned, new { @class = "control-label" })
+        <div class='input-group date' id='selectedDateReturned'>
+            <input name="DateReturned" id="DateReturned" type='text' class="form-control" data-toggle="tooltip"
+                    data-placement="bottom" title="Select Date" data-date-format="DD-MM-YYYY HH:mm:ss" />
+            <span class="input-group-addon input-group-append">
+                <span class="input-group-text fa fa-calendar"></span>
+            </span>
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+        <div class="display-3 col-md-8">
+            <a class="btn btn-secondary" href="@Url.Action("Index", "LibraryBookStatus", new { area = "" })"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back To List</a>
+            <button type="submit" class="btn btn-primary" onclick="if ($('#success-message').hasClass('sr-only')===false) $('#success-message').addClass('sr-only');"> Save <i class="fa fa-check-circle" aria-hidden="true"></i></button>
+        </div>
+    </div>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="form-group">
+            <div class="col-md-8 col-md-push-3 alert alert-danger">
+                @Html.ValidationSummary(null, new { id = "validationSummary" })
+            </div>
+        </div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div id="success-message" class="form-group">
+            <div class="col-md-8 col-md-push-3 alert alert-success">
+                @TempData["SuccessMessage"] <i class="fa fa-check-circle" aria-hidden="true"></i>
+            </div>
+        </div>
+    }
+
+    
+}
+
+
+@section Scripts
+{
+    <script src="~/lib/bootstrap3-typeahead/bootstrap3-typeahead.min.js"></script>
+    <script src="~/js/librarybookstatus.js"></script>
+}
+
+
+

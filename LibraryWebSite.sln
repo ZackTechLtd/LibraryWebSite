@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryWebSite", "LibraryWebSite\LibraryWebSite.csproj", "{453C4149-F3E6-418E-B961-040EE867EE2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\LibraryAPIApp\Common\Common.csproj", "{1535138E-58B1-456F-944E-2AB58AFAE267}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{453C4149-F3E6-418E-B961-040EE867EE2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453C4149-F3E6-418E-B961-040EE867EE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453C4149-F3E6-418E-B961-040EE867EE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453C4149-F3E6-418E-B961-040EE867EE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1535138E-58B1-456F-944E-2AB58AFAE267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1535138E-58B1-456F-944E-2AB58AFAE267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1535138E-58B1-456F-944E-2AB58AFAE267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1535138E-58B1-456F-944E-2AB58AFAE267}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

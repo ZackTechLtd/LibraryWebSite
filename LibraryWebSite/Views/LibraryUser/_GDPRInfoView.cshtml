@@ -1,0 +1,138 @@
+﻿@model LibraryWebSite.Models.LibraryUserViewModel
+
+
+<input type="hidden" class="form-control" asp-for="StrInformedDate">
+<input type="hidden" class="form-control" asp-for="StrContactByPostConsentDate">
+<input type="hidden" class="form-control" asp-for="StrContactByEmailConsentDate">
+<input type="hidden" class="form-control" asp-for="StrContactByPhoneConsentDate">
+<input type="hidden" class="form-control" asp-for="StrContactBySMSConsentDate">
+
+<fieldset class="form-group">
+    @Html.LabelFor(m => m.GDPRInformedDate, new { @class = "control-label" })
+    <div class='input-group date' id='selectedGDPRInformedDate'>
+        <input name="GDPRInformedDate" id="GDPRInformedDate" type='text' class="form-control" data-toggle="tooltip"
+                data-placement="bottom" title="Select Date" data-date-format="DD-MM-YYYY HH:mm:ss" />
+        <span class="input-group-addon input-group-append">
+            <span class="input-group-text fa fa-calendar"></span>
+        </span>
+    </div>
+</fieldset>
+
+<fieldset class="form-group">
+    <label asp-for="GDPRInformedBy"></label>
+    <input type="text" class="form-control" asp-for="GDPRInformedBy">
+    <span asp-validation-for="GDPRInformedBy"></span>
+</fieldset>
+
+<fieldset class="form-group">
+    <label asp-for="GDPRHowInformed"></label>
+    <input type="text" class="form-control" asp-for="GDPRHowInformed">
+    <span asp-validation-for="GDPRHowInformed"></span>
+</fieldset>
+
+<fieldset class="form-group">
+    @Html.LabelFor(model => model.LibraryUserByPost, htmlAttributes: new { @class = "control-label" })
+    <div class="col-md-1">
+        @Html.CheckBoxFor(m => m.LibraryUserByPost, new
+        {
+            @class = "control-label",
+            data_toggle = "tooltip",
+            data_placement = "right",
+            title = "Contact By Post"
+        })
+        @Html.ValidationMessageFor(m => m.LibraryUserByPost, String.Empty, new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-11">
+        <div class='input-group date' id='selectedLibraryUserByPostConsentDate'>
+            <input name="LibraryUserByPostConsentDate" id="LibraryUserByPostConsentDate" type='text' class="form-control" data-toggle="tooltip"
+                    data-placement="bottom" title="Select Date" data-date-format="DD-MM-YYYY HH:mm:ss" />
+            <span class="input-group-addon input-group-append">
+                <span class="input-group-text fa fa-calendar"></span>
+            </span>
+        </div>
+    </div>
+    
+</fieldset>
+
+<fieldset class="form-group">
+    @Html.LabelFor(model => model.LibraryUserByEmail, htmlAttributes: new { @class = "control-label" })
+    <div class="col-md-1">
+        @Html.CheckBoxFor(m => m.LibraryUserByEmail, new
+        {
+            @class = "control-label",
+            data_toggle = "tooltip",
+            data_placement = "right",
+            title = "Contact By Email"
+        })
+        @Html.ValidationMessageFor(m => m.LibraryUserByEmail, String.Empty, new { @class = "text-danger" })
+    </div>
+    <div class="col-md-11">
+        <div class='input-group date' id='selectedLibraryUserByEmailConsentDate'>
+            <input name="LibraryUserByEmailConsentDate" id="LibraryUserByEmailConsentDate" type='text' class="form-control" data-toggle="tooltip"
+                    data-placement="bottom" title="Select Date" data-date-format="DD-MM-YYYY HH:mm:ss" />
+            <span class="input-group-addon input-group-append">
+                <span class="input-group-text fa fa-calendar"></span>
+            </span>
+        </div>
+        @Html.ValidationMessageFor(model => model.LibraryUserByEmailConsentDate, "", new { @class = "text-danger" })
+    </div>
+</fieldset>
+
+<fieldset class="form-group">
+    @Html.LabelFor(model => model.LibraryUserByPhone, htmlAttributes: new { @class = "control-label" })
+    <div class="col-md-1">
+        @Html.CheckBoxFor(m => m.LibraryUserByPhone, new
+        {
+            @class = "control-label",
+            data_toggle = "tooltip",
+            data_placement = "right",
+            title = "Contact By Phone"
+        })
+        @Html.ValidationMessageFor(m => m.LibraryUserByPhone, String.Empty, new { @class = "text-danger" })
+    </div>
+    <div class="col-md-11">
+        <div class='input-group date' id='selectedLibraryUserByPhoneConsentDate'>
+            <input name="LibraryUserByPhoneConsentDate" id="LibraryUserByPhoneConsentDate" type='text' class="form-control" data-toggle="tooltip"
+                    data-placement="bottom" title="Select Date" data-date-format="DD-MM-YYYY HH:mm:ss" />
+            <span class="input-group-addon input-group-append">
+                <span class="input-group-text fa fa-calendar"></span>
+            </span>
+        </div>
+        @Html.ValidationMessageFor(model => model.LibraryUserByPhoneConsentDate, "", new { @class = "text-danger" })
+    </div>
+</fieldset>
+
+<fieldset class="form-group">
+    @Html.LabelFor(model => model.LibraryUserBySMS, htmlAttributes: new { @class = "control-label" })
+    <div class="col-md-1">
+        @Html.CheckBoxFor(m => m.LibraryUserBySMS, new
+        {
+            @class = "control-label",
+            data_toggle = "tooltip",
+            data_placement = "right",
+            title = "Contact By SMS"
+        })
+        @Html.ValidationMessageFor(m => m.LibraryUserBySMS, String.Empty, new { @class = "text-danger" })
+    </div>
+    <div class="col-md-11">
+        <div class='input-group date' id='selectedLibraryUserBySMSConsentDate'>
+            <input name="ContactBySMSConsentDate" id="LibraryUserBySMSConsentDate" type='text' class="form-control" data-toggle="tooltip"
+                    data-placement="bottom" title="Select Date" data-date-format="DD-MM-YYYY HH:mm:ss" />
+            <span class="input-group-addon input-group-append">
+                <span class="input-group-text fa fa-calendar"></span>
+            </span>
+        </div>
+        @Html.ValidationMessageFor(model => model.LibraryUserBySMSConsentDate, "", new { @class = "text-danger" })
+    </div>
+</fieldset>
+
+<fieldset class="form-group">
+    <label asp-for="GDPRNotes"></label>
+    <textarea class="form-control" asp-for="GDPRNotes" rows="4" ></textarea>
+    <span asp-validation-for="GDPRNotes"></span>
+</fieldset>
+
+
+
+

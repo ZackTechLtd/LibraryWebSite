@@ -1,0 +1,90 @@
+﻿@model LibraryWebSite.Models.LibraryBookViewModel
+@{
+    ViewBag.Title = "Library Book";
+}
+
+@if (string.IsNullOrEmpty(Model.LibraryBookCode) || Convert.ToString(TempData["SuccessMessage"]) == "Record Inserted")
+{
+    <div class="page-header">
+        <h1>Add Library Book</h1>
+        <small>Add Library Book To List</small>
+    </div>
+}
+else
+{
+    <div class="page-header">
+        <h1>Edit Library Book</h1>
+        <small>Edit Existing Library Book</small>
+    </div>
+}
+
+@using (Html.BeginForm("SaveLibraryBook", "LibraryBook", new { area = "", Id = Model.LibraryBookCode }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" class="form-control" asp-for="LibraryBookCode">
+
+    <fieldset class="form-group">
+        <label asp-for="ISBN"></label>
+        <input type="text" class="form-control" asp-for="ISBN">
+        <span asp-validation-for="ISBN"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="Author"></label>
+        <input type="text" class="form-control" asp-for="Author">
+        <span asp-validation-for="Author"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="Title"></label>
+        <input type="text" class="form-control" asp-for="Title">
+        <span asp-validation-for="Title"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="CopyNumber"></label>
+        <input type="number" class="form-control" asp-for="CopyNumber">
+        <span asp-validation-for="CopyNumber"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="IsLost"></label>
+        <input type="checkbox" class="form-control" asp-for="IsLost">
+        <span asp-validation-for="IsLost"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="IsStolen"></label>
+        <input type="checkbox" class="form-control" asp-for="IsStolen">
+        <span asp-validation-for="IsStolen"></span>
+    </fieldset>
+
+    <div class="form-group">
+        <div class="display-3 col-md-8">
+            <a class="btn btn-secondary" href="@Url.Action("Index", "LibraryBook", new { area = "" })"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Back To List</a>
+            <button type="submit" class="btn btn-primary" onclick="if ($('#success-message').hasClass('sr-only')===false) $('#success-message').addClass('sr-only');"> Save <i class="fa fa-check-circle" aria-hidden="true"></i></button>
+        </div>
+    </div>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="form-group">
+            <div class="col-md-8 col-md-push-3 alert alert-danger">
+                @Html.ValidationSummary(null, new { id = "validationSummary" })
+            </div>
+        </div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div id="success-message" class="form-group">
+            <div class="col-md-8 col-md-push-3 alert alert-success">
+                @TempData["SuccessMessage"] <i class="fa fa-check-circle" aria-hidden="true"></i>
+            </div>
+        </div>
+    }
+
+    
+}
+

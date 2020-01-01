@@ -1,0 +1,89 @@
+﻿@model LibraryWebSite.Models.LibraryUserViewModel
+
+    <fieldset class="form-group">
+        <label asp-for="Title"></label>
+        <input type="text" class="form-control col-md-1" asp-for="Title">
+        <span asp-validation-for="Name"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="Name"></label>
+        <input type="text" class="form-control" asp-for="Name">
+        <span asp-validation-for="Name"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="PhoneNumber"></label>
+        <input type="text" class="form-control" asp-for="PhoneNumber">
+        <span asp-validation-for="PhoneNumber"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="MobilePhoneNumber"></label>
+        <input type="text" class="form-control" asp-for="MobilePhoneNumber">
+        <span asp-validation-for="MobilePhoneNumber"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="Email"></label>
+        <input type="email" class="form-control" asp-for="Email">
+        <span asp-validation-for="Email"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="AlternativePhoneNumber"></label>
+        <input type="text" class="form-control" asp-for="AlternativePhoneNumber">
+        <span asp-validation-for="AlternativePhoneNumber"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="AlternativeEmail"></label>
+        <input type="email" class="form-control" asp-for="AlternativeEmail">
+        <span asp-validation-for="AlternativeEmail"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="AddressLine1"></label>
+        <input type="text" class="form-control" asp-for="AddressLine1">
+        <span asp-validation-for="AddressLine1"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="AddressLine2"></label>
+        <input type="text" class="form-control" asp-for="AddressLine2">
+        <span asp-validation-for="AddressLine2"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="AddressLine3"></label>
+        <input type="text" class="form-control" asp-for="AddressLine3">
+        <span asp-validation-for="AddressLine3"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="City"></label>
+        <input type="text" class="form-control" asp-for="City">
+        <span asp-validation-for="City"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="County"></label>
+        <select  asp-for="County" asp-items="@Model.Counties" class="form-control" >
+            <option value="">Please select</option>
+        </select>
+        <span asp-validation-for="County"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="Country"></label>
+        <select asp-for="Country" asp-items="@Model.Countries" class="form-control">
+            <option value="">Please select</option>
+        </select>
+        <span asp-validation-for="Country"></span>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label asp-for="Postcode"></label>
+        <input type="text" class="form-control" asp-for="Postcode">
+        <span asp-validation-for="Postcode"></span>
+    </fieldset>

@@ -1,0 +1,190 @@
+﻿/* Home page widgets - Start */
+
+.main-container {
+    padding-top: 15px;
+    width:auto;
+}
+
+    .main-container .intro-header {
+        text-align: center;
+    }
+
+.main-container-item {
+    color: #000000;
+    background-color: #73BD18;
+    min-height: 210px;
+    position: relative;
+    border-radius: 20px;
+    padding: 1em;
+    margin-bottom: 10px;
+    width: 300px;
+}
+    .main-container-item h3 {
+       font-size: 1.17em;
+       font-weight: bold;
+    }
+
+.main-container-item-half {
+    min-height: 100px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+    .main-container-item:hover {
+        background-color: #90ee90;
+        position: relative;
+        transition: 0.3s;
+        border: 1px solid #ffffff;
+    }
+
+.main-container-item-right {
+    color: #ffffff;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.main-container-item-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+/* Home page widgets - end */
+
+/* Login Form - Start */
+.login-wrapper {
+    box-shadow: 0 12px 15px 0 rgba(0,0,0,.24), 0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+.login-container {
+    width: 100%;
+    padding: 15px;
+    background: #fff;
+}
+
+.login-form {
+    text-align: center;
+}
+
+.login-form-body {
+    padding: 30px;
+}
+
+.login-title {
+    font-size: 39px;
+    color: #000000;
+    line-height: 2;
+}
+
+.login-input {
+    margin-bottom: 20px;
+}
+
+.login-form-footer {
+    padding-top: 20px;
+}
+
+.login-form-footer > .login-form-button input {
+    font-size: 18px;
+}
+
+.login-form-footer > .foot-lnk a {
+    color: #000000;
+    font-size: 14px;
+}
+
+.login-form-footer > .foot-lnk a:hover {
+    color: #9ec619;
+    text-decoration: none;
+}
+
+input[type=email],
+input[type=password],
+input[type=text] {
+    width: 100%;
+    display: block;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.input100 {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.input100:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+hr {
+    height: 2px;
+    background: #73BD18;
+    width: 50%;
+    margin-left: 25%;
+    align-content: center;
+}
+
+    hr.hr-100 {
+        margin-left: 0;
+        width: 100%;
+    }
+
+.fc-head {
+    background-color: #73BD18;
+    color: #ffffff;
+}
+
+span #Username-error, 
+span #Password-error{
+    color: red;
+    font-style: italic;
+}
+/* Login Form - End */
+
+/* DataTables START */
+.dataTables_wrapper a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+    .dataTables_wrapper a:hover {
+        color: #444;
+        text-decoration: underline;
+    }
+
+.dataTables_wrapper tr.odd {
+    background: #f9f9f9;
+}
+
+.dataTables_filter input[type=search] {
+    font-weight: 500;
+}
+
+.form-group div input[type="checkbox"] {
+    margin: 0.8em 0 0 0;
+}
+
+.hidden-block {
+    visibility: hidden;
+}
+
+.has-hidden-block:hover .hidden-block {
+    visibility: visible;
+}
+
+.dataTables_wrapper .dataTables_processing {
+    z-index: 100;
+    background-color: #FF0000;
+    color: white;
+}
+
+
+/* DataTables END */
+
+

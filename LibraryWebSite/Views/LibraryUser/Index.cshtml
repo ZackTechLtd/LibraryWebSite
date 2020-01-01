@@ -1,0 +1,65 @@
+﻿@model LibraryWebSite.Models.LibraryUserViewModel
+@{
+    ViewBag.Title = "Library Users";
+}
+
+<div id="table-actions"
+     data-editurl="@Url.Action("LibraryUser", "LibraryUser", new { area = "" })"
+     data-deleteurl="@Url.Action("DeleteLibraryUser", "LibraryUser", new { area = "" })"
+     data-searchcolumns="libraryUser">
+</div>
+
+<div class="block">
+    @Html.AntiForgeryToken()
+
+    <div id="errorMessage" class="row sr-only">
+        <div class="form-group">
+            <div class="col-md-12 alert alert-danger">
+                @Html.ValidationSummary(null, new { id = "validationSummary" })
+            </div>
+        </div>
+    </div>
+
+    <div id="successMessage" class="row sr-only">
+        <div class="form-group">
+            <div class="col-md-12 alert alert-success">
+                Record Deleted <i class="fa fa-check-circle" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="panel panel-primary wl">
+            <div class="panel-heading">
+                <div class="row">
+                    <h4 class="col-xs-10 col-md-10">
+                        <i class="fa fa-building fa-lg" aria-hidden="true"></i>&nbsp;&nbsp; Library User
+                    </h4>
+                    <div class="col-xs-4 col-md-2">
+                        <a class="btn btn-success" href="@Url.Action("LibraryUser","LibraryUser", new { area = "" })">Add New <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table id="pagedResultsDataTable" class="table table-striped-utl table-hover-utl" data-url="@Url.Action("GetLibraryUsers", "LibraryUser", new { area = "" })">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Phone Number</th>
+                                <th>Mobile Number</th>
+                                <th>Email</th>
+                                <th>Modified By</th>
+                                <th>Data Modified</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
