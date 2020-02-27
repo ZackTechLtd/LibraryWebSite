@@ -42,7 +42,7 @@ namespace LibraryWebSite.ApiInfrastructure.Client
 
         public async Task<BoolResponse> Delete(string id)
         {
-            return await DeleteContent<BoolResponse>(_apiUrl /*+ APIConstants.Delete*/ + "?=" + id);
+            return await DeleteContent<BoolResponse>(_apiUrl /*+ APIConstants.Delete*/ + "?id=" + id);
         }
     }
 }
